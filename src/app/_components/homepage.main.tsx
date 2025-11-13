@@ -1,14 +1,15 @@
-// app/page.tsx or homepage.main.tsx
 'use client';
 
 import Footer from "@/components/footer.component";
 import Navbar from "@/components/navbar.component";
 import HeroSection from "../_components/hero.component";
+import KenaliDiriSection from "./kenali-diri.component";
+import BantuanSection from "./bantuan.section";
 
 export default function Home() {
   return (
     <div className="relative min-h-screen font-sans">
-      {/* Background Gradient */}
+
       <div
         className="fixed inset-0 -z-20"
         style={{
@@ -17,7 +18,6 @@ export default function Home() {
         }}
       />
       
-      {/* Radial Gradient Effect */}
       <div
         className="
           pointer-events-none
@@ -37,10 +37,11 @@ export default function Home() {
       
       <Navbar />
       
-      {/* Hero Section */}
       <HeroSection />
       
-      {/* Other sections will go here */}
+      <KenaliDiriSection />
+
+      <BantuanSection />
       
       <Footer />
     </div>
