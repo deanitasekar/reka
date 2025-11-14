@@ -118,8 +118,13 @@ export default function KenaliDiriSection() {
 
       {/* Popup */}
       {selectedItem && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center px-4 bg-black/60 backdrop-blur-sm">
-          <div className="relative w-full max-w-4xl bg-[#6D5446] rounded-3xl p-6 md:p-10 shadow-2xl border-8 border-[#ffffff7a]">
+        <div className="fixed inset-0 z-9999 flex items-center justify-center px-4 bg-black/60 backdrop-blur-sm">
+          <div
+            className="relative w-full max-w-4xl rounded-3xl p-6 md:p-10 shadow-2xl border-8 border-[#ffffff7a] bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: "url('/kenali-card.svg')",
+            }}
+          >
             <button
               onClick={() => setSelectedItem(null)}
               className="absolute top-6 right-6 w-10 h-10 flex items-center justify-center text-white bg-white/20 hover:bg-white/30 rounded-full border-2 border-white transition-colors"
@@ -135,7 +140,6 @@ export default function KenaliDiriSection() {
             <div className="flex flex-col-reverse md:flex-row gap-8 md:gap-12 items-center">
               {/* Teks Modal */}
               <div className="flex-1 w-full space-y-6">
-
                 <div className="bg-white rounded-2xl p-6 shadow-md">
                   <h4 className="text-[#7A512F] text-xl font-bold mb-3">
                     Gejala umum
@@ -175,7 +179,6 @@ export default function KenaliDiriSection() {
 
               {/* Gambar */}
               <div className="flex-1 flex flex-col items-center justify-center relative">
-
                 <div
                   className={`w-70 h-70 rounded-full flex items-center justify-center`}
                 >

@@ -32,7 +32,7 @@ export default function Home() {
         <MotionTreesBackground />
       </div>
 
-      <div className="relative z-10 flex-grow w-full flex flex-col">
+      <div className="relative z-10 grow w-full flex flex-col">
         <Navbar />
 
         <HeroSection />

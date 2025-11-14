@@ -151,7 +151,7 @@ export default function PanduanResiliensiSection() {
                         {storyItems.map((item) => (
                           <div
                             key={item.id}
-                            className="relative flex-shrink-0 w-[280px] h-[180px] rounded-2xl overflow-hidden group cursor-pointer snap-start shadow-sm"
+                            className="relative shrink-0 w-[280px] h-[180px] rounded-2xl overflow-hidden group cursor-pointer snap-start shadow-sm"
                           >
                             <div className="absolute inset-0 bg-gray-300">
                               <Image
@@ -161,7 +161,7 @@ export default function PanduanResiliensiSection() {
                                 className="object-cover transition-transform duration-500 group-hover:scale-110"
                               />
                             </div>
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                            <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
                             <div className="absolute bottom-0 left-0 p-4 text-white">
                               <h4 className="font-bold text-lg mb-1">
                                 {item.title}
