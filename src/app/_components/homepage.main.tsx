@@ -6,11 +6,12 @@ import HeroSection from "../_components/hero.component";
 import KenaliDiriSection from "./kenali-diri.component";
 import BantuanSection from "./bantuan.section";
 import PanduanResiliensiSection from "./panduan-resiliensi.component";
+import ParallaxTreesBackground from "@/components/ui/parallax-tree";
 
 export default function Home() {
   return (
     <div className="relative min-h-screen font-sans">
-
+      {/* Background Gradient - paling belakang */}
       <div
         className="fixed inset-0 -z-20"
         style={{
@@ -19,6 +20,7 @@ export default function Home() {
         }}
       />
       
+      {/* Blur Effect */}
       <div
         className="
           pointer-events-none
@@ -36,18 +38,23 @@ export default function Home() {
         aria-hidden="true"
       />
       
-      <Navbar />
+      {/* Parallax Trees Background - di antara background dan content */}
+      <ParallaxTreesBackground />
       
-      <HeroSection />
-      
-      <KenaliDiriSection />
+      {/* Main Content - z-index tertinggi */}
+      <div className="relative z-10">
+        <Navbar />
+        
+        <HeroSection />
+        
+        <KenaliDiriSection />
 
-      <BantuanSection />
-      
-      <PanduanResiliensiSection />]
-      
-      <Footer />
-
+        <BantuanSection />
+        
+        <PanduanResiliensiSection />
+        
+        <Footer />
+      </div>
     </div>
   );
 }
