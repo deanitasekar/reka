@@ -3,9 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import TiltedCard from "@/components/ui/tilted-card.jsx";
-import { X } from "lucide-react"; // Pastikan install lucide-react atau ganti dengan SVG icon biasa
+import { X } from "lucide-react";
 
-// Definisi tipe data untuk konten
 interface ContentItem {
   id: number;
   src: string;
@@ -71,7 +70,7 @@ export default function KenaliDiriSection() {
 
   return (
     <>
-      <section className="w-full py-20 px-4 overflow-hidden relative">
+      <section className="w-full py-20 px-4 overflow-hidden relative min-h-screen flex flex-col items-center justify-center">
         {/* Header Section */}
         <div className="text-center mb-16 space-y-2.5">
           <h3 className="text-[#4A90C8] text-4xl md:text-3xl font-medium">
@@ -82,7 +81,7 @@ export default function KenaliDiriSection() {
           </h2>
         </div>
 
-        {/* Gambar Emosi / Cards */}
+        {/* Cards */}
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start justify-center gap-12 md:gap-20">
           {items.map((item, index) => (
             <div
@@ -90,9 +89,8 @@ export default function KenaliDiriSection() {
               onClick={() => setSelectedItem(item)}
               className="flex flex-col items-center group cursor-pointer transition-transform hover:scale-105"
             >
-              {/* Wrapper Tilt Card */}
-              <div className="relative w-56 h-56 md:w-64 md:h-64 pointer-events-none">
-                {/* pointer-events-none agar klik ditangani div parent */}
+              {/* PERBAIKAN DI SINI: Hapus 'pointer-events-none' */}
+              <div className="relative w-56 h-56 md:w-64 md:h-64">
                 <TiltedCard
                   imageSrc={item.src}
                   altText={item.label}
@@ -102,7 +100,7 @@ export default function KenaliDiriSection() {
                   imageHeight="100%"
                   imageWidth="100%"
                   rotateAmplitude={15}
-                  scaleOnHover={1.0} // handle scale di parent saja agar smooth
+                  scaleOnHover={1.0}
                   showMobileWarning={false}
                   showTooltip={true}
                   displayOverlayContent={false}
@@ -118,12 +116,10 @@ export default function KenaliDiriSection() {
         </div>
       </section>
 
-      {/* POPUP MODAL */}
+      {/* Popup */}
       {selectedItem && (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center px-4 bg-black/60 backdrop-blur-sm">
-          {/* Modal Container - Background Cokelat Kayu */}
           <div className="relative w-full max-w-4xl bg-[#6D5446] rounded-3xl p-6 md:p-10 shadow-2xl border-8 border-[#ffffff7a]">
-            {/* Tombol Close */}
             <button
               onClick={() => setSelectedItem(null)}
               className="absolute top-6 right-6 w-10 h-10 flex items-center justify-center text-white bg-white/20 hover:bg-white/30 rounded-full border-2 border-white transition-colors"
@@ -137,9 +133,9 @@ export default function KenaliDiriSection() {
             </h2>
 
             <div className="flex flex-col-reverse md:flex-row gap-8 md:gap-12 items-center">
-              {/* Kolom Kiri: Teks */}
+              {/* Teks Modal */}
               <div className="flex-1 w-full space-y-6">
-                {/* Kotak Gejala Umum */}
+
                 <div className="bg-white rounded-2xl p-6 shadow-md">
                   <h4 className="text-[#7A512F] text-xl font-bold mb-3">
                     Gejala umum
@@ -149,7 +145,7 @@ export default function KenaliDiriSection() {
                       <li
                         key={i}
                         className="flex items-start text-gray-800 font-medium leading-relaxed"
-                        style={{ lineHeight: "15px"}}
+                        style={{ lineHeight: "15px" }}
                       >
                         <span className="mr-2">•</span>
                         {g}
@@ -158,25 +154,28 @@ export default function KenaliDiriSection() {
                   </ul>
                 </div>
 
-                {/* Kotak Langkah Cepat */}
+                {/* Langkah Cepat */}
                 <div className="bg-white rounded-2xl p-6 shadow-md">
                   <h4 className="text-[#6D5446] text-xl font-bold mb-2">
                     Langkah Cepat
                   </h4>
-                  <p className="text-gray-800 font-medium leading-relaxed" style={{ lineHeight: "15px" }}>
+                  <p
+                    className="text-gray-800 font-medium leading-relaxed"
+                    style={{ lineHeight: "15px" }}
+                  >
                     {selectedItem.langkah}
                   </p>
                 </div>
 
-                {/* Tombol Action (Mobile Only - Opsional, dipindah ke bawah biar sesuai screenshot) */}
+                {/* Tombol Action  */}
                 <button className="w-full md:hidden bg-[#6CA5D6] hover:bg-[#5b90bf] text-white font-bold py-3 rounded-lg transition-colors shadow-lg mt-4">
                   {selectedItem.buttonText}
                 </button>
               </div>
 
-              {/* Kolom Kanan: Gambar */}
+              {/* Gambar */}
               <div className="flex-1 flex flex-col items-center justify-center relative">
-                {/* Lingkaran Latar Belakang */}
+
                 <div
                   className={`w-70 h-70 rounded-full flex items-center justify-center`}
                 >
@@ -192,7 +191,7 @@ export default function KenaliDiriSection() {
               </div>
             </div>
 
-            {/* Tombol Action (Desktop Position - Bottom Left aligned) */}
+            {/* Tombol Action */}
             <div className=" hidden md:block w-full max-w-[48%]">
               <button className="w-full bg-[#6CA5D6] hover:bg-[#5b90bf] text-white font-bold py-3 rounded-lg transition-colors shadow-lg">
                 {selectedItem.buttonText}

@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full min-h-screen flex flex-col items-center justify-start overflow-hidden pt-32 pb-20">
-      {/* BUBBLES */}
+    <section className="relative w-full max-h-full flex flex-col items-center justify-start overflow-hidden pt-32 pb-2">
+
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: [0, 1, 0], scale: [0.9, 1, 0.9] }}
@@ -67,7 +67,6 @@ export default function HeroSection() {
         </p>
       </motion.div>
 
-      {/* ==== TEKS UTAMA ==== */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center mt-8">
         <h1
           className="text-5xl md:text-5xl font-bold text-[#4A90C8] mb-5"
@@ -99,7 +98,6 @@ export default function HeroSection() {
           Lihat Lebih Lanjut
         </button>
 
-        {/* HERO IMAGE */}
         <motion.div
           animate={{ y: [-15, 15, -15] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
