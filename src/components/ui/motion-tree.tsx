@@ -6,7 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 export default function MotionTreesBackground() {
   const { scrollYProgress } = useScroll();
 
-  const layer1Y = useTransform(scrollYProgress, [0, 0.3], [80, 0]);
+  const layer1Y = useTransform(scrollYProgress, [0, 0.3], [90, 0]);
   const layer1Scale = useTransform(scrollYProgress, [0, 0.3], [0.95, 1]);
 
   const layer2Y = useTransform(scrollYProgress, [0.1, 0.4], [60, 0]);
@@ -30,13 +30,13 @@ export default function MotionTreesBackground() {
           left: "-5%",
           right: "-5%",
           width: "110%",
-          top: "150vh",
+          top: "155vh",
           y: layer1Y,
           scale: layer1Scale,
           transformOrigin: "center bottom",
         }}
       >
-        <div className="relative w-full h-[840px]">
+        <div className="relative w-full h-[840px] xl:h-[900px] 2xl:h-[950px]">
           <Image
             src="/layer-1.svg"
             alt=""
@@ -54,13 +54,13 @@ export default function MotionTreesBackground() {
           left: "-3%",
           right: "-3%",
           width: "106%",
-          top: "120vh",
+          top: "130vh",
           y: layer2Y,
           scale: layer2Scale,
           transformOrigin: "center bottom",
         }}
       >
-        <div className="relative w-full h-[2420px]">
+        <div className="relative w-full h-[2420px] xl:h-[2435px] 2xl:h-[2445px]">
           <Image
             src="/layer-2.svg"
             alt=""
@@ -84,7 +84,7 @@ export default function MotionTreesBackground() {
             }}
           >
             <video
-              className="w-[160px] sm:w-[180px] md:w-[200px] lg:w-[220px] xl:w-[240px] h-auto"
+              className="w-40 sm:w-[180px] md:w-[200px] lg:w-[220px] xl:w-[240px] h-auto"
               autoPlay
               loop
               muted
@@ -112,16 +112,16 @@ export default function MotionTreesBackground() {
       <motion.div
         className="absolute z-10"
         style={{
-          left: "-2%",
-          right: "-2%",
-          width: "104%",
+          left: "-2.5%",
+          right: "-2.5%",
+          width: "105%", 
           top: "300vh",
           y: layer3Y,
           scale: layer3Scale,
           transformOrigin: "center bottom",
         }}
       >
-        <div className="relative w-full h-[2200px]">
+        <div className="relative w-full h-[2200px] xl:h-[2300px]">
           <Image
             src="/layer-3.svg"
             alt=""
