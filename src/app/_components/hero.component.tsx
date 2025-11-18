@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, Transition } from "framer-motion";
 import RotatingText from "@/components/ui/rotating-text";
@@ -12,6 +13,31 @@ const bubbleTransition: Transition = {
 };
 
 export default function HeroSection() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const characterRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  const calculateShadow = () => {
+    if (!characterRef.current) return "0px 10px 30px rgba(107, 165, 214, 0.3)";
+    
+    const rect = characterRef.current.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    
+    const deltaX = (mousePosition.x - centerX) / 15;
+    const deltaY = (mousePosition.y - centerY) / 15;
+    
+    return `${deltaX}px ${deltaY}px 40px rgba(107, 165, 214, 0.5), ${deltaX * 0.5}px ${deltaY * 0.5}px 20px rgba(74, 144, 200, 0.3)`;
+  };
+
   return (
     <section className="relative w-full min-h-screen flex flex-col items-center justify-start overflow-hidden pt-28 pb-10">
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
@@ -153,9 +179,13 @@ export default function HeroSection() {
         </button>
 
         <motion.div
-          animate={{ y: [-15, 15, -15] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-          className="relative w-[170px] sm:w-[240px] md:w-[300px] lg:w-[400px] mx-auto sm:top-[50%] -translate-y-10 sm:-translate-y-16"
+          ref={characterRef}
+          animate={{ y: [-8, 8, -8] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          className="relative w-[170px] sm:w-[240px] md:w-[300px] lg:w-[400px] mx-auto sm:top-[50%] -translate-y-10 sm:-translate-y-16 transition-all duration-200"
+          style={{
+            filter: `drop-shadow(${calculateShadow()})`,
+          }}
         >
           <Image
             src="/character_hero.svg"
