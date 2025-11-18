@@ -41,8 +41,8 @@ const Navbar = () => {
           <Image
             src="/logo_reka.svg"
             alt="Logo Reka"
-            width={120}
-            height={80}
+            width={80}
+            height={50}
             className="cursor-pointer transition-opacity"
           />
         </Link>

@@ -28,19 +28,19 @@ const storyItems = [
     id: 1,
     title: "Bangkit dari Abu",
     desc: "Hubungi kami kapan saja. Kami ada untuk mendengarkan.",
-    image: "/cerita-1.png",
+    image: "/pendakian.jpg.webp",
   },
   {
     id: 2,
     title: "Harapan Baru",
     desc: "Hubungi kami kapan saja. Kami ada untuk mendengarkan.",
-    image: "/cerita-1.png",
+    image: "/harapan.svg",
   },
   {
     id: 3,
     title: "Melangkah Maju",
     desc: "Kisah inspiratif tentang pemulihan trauma.",
-    image: "/cerita-1.png",
+    image: "/melangkah-maju.svg",
   },
 ];
 
@@ -178,9 +178,7 @@ export default function PanduanResiliensiSection() {
 
                         <div className="mt-3 flex flex-col md:flex-row items-end gap-5 justify-between">
                           <p className="text-sm text-gray-600 leading-relaxed font-medium max-w-lg">
-                            Lorem ipsum dolor sit consectetur. Velit amet
-                            fringilla vestibulum viverra volutpat nulla
-                            porttitor.
+                            Setiap langkah kecil menuju pulih adalah bagian penting dari perjalanan. Di sini, kami hadir untuk menemanimu menemukan kembali kekuatan dan harapan.
                           </p>
                           <button className="bg-[#6BA5D6] hover:bg-[#5A94C5] text-white px-8 py-3 rounded-xl font-semibold shadow-md transition-colors text-center whitespace-nowrap shrink-0">
                             Bagikan <br /> Kisahmu

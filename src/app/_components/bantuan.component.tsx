@@ -24,7 +24,6 @@ export default function BantuanSection() {
             }}
             variants={{
               rest: { opacity: 0 },
-              hover: { opacity: 1 },
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
           />
@@ -44,15 +43,14 @@ export default function BantuanSection() {
 
 
         <div className="flex justify-center">
-          <div
+            <div
             className="bg-white rounded-[20px] border-8 p-6 pb-8 h-auto w-full max-w-[320px] flex flex-col items-center justify-center gap-3"
             style={{
               boxShadow: "none",
               borderColor: "rgba(255, 255, 255, 0.48)",
             }}
-          >
-            
-            <div className="w-24 h-24 bg-[#D2E6F7] rounded-full shrink-0"></div>
+            >
+            <img src="/hotline-krisis.svg" alt="Hotline Krisis" className="w-24 h-24 object-contain shrink-0" />
 
             <h3 className="text-[#2B6CB0] text-xl font-black text-center">
               Hotline Krisis 24/7
@@ -81,7 +79,7 @@ export default function BantuanSection() {
             }}
           >
           
-            <div className="w-24 h-24 bg-[#D2E6F7] rounded-full shrink-0"></div>
+            <img src="/konsultasi.svg" alt="Konsultasi" className="w-24 h-24 object-contain shrink-0" />
 
             <h3 className="text-[#2B6CB0] text-xl font-black text-center">
               Konsultasi
