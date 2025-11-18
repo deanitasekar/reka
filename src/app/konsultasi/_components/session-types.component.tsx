@@ -22,8 +22,6 @@ export type SessionType = {
   icon: keyof typeof icons;
   title: string;
   desc: string;
-  price: string;
-  duration: string;
 };
 
 type TypesProps = {
@@ -108,13 +106,6 @@ export default function TypesSection({ sessionTypes }: TypesProps) {
                 {type.title}
               </h3>
               <p className="text-gray-700 text-sm mb-4">{type.desc}</p>
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-[#6BA5D6] font-bold">{type.price}</span>
-                <span className="text-gray-500 text-sm flex items-center">
-                  <Clock size={16} className="mr-1" />
-                  {type.duration}
-                </span>
-              </div>
               <button className="w-full py-2.5 bg-[#6BA5D6] hover:bg-[#5A94C5] text-white text-base font-semibold rounded-xl transition-colors shadow-md">
                 Pilih Sesi
               </button>

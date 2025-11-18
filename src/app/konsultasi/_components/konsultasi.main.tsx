@@ -21,7 +21,7 @@ const counselors = [
     experience: "15 tahun",
     rating: 4.9,
     availability: "Senin - Jumat",
-    image: "/counselor-1.svg",
+    image: "/doctor-1.svg",
   },
   {
     id: 2,
@@ -30,7 +30,7 @@ const counselors = [
     experience: "12 tahun",
     rating: 4.8,
     availability: "Selasa - Sabtu",
-    image: "/counselor-2.svg",
+    image: "/doctor-2.svg",
   },
   {
     id: 3,
@@ -39,7 +39,7 @@ const counselors = [
     experience: "10 tahun",
     rating: 4.9,
     availability: "Senin - Kamis",
-    image: "/counselor-3.svg",
+    image: "/doctor-3.svg",
   },
 ];
 
@@ -48,22 +48,16 @@ const sessionTypes: SessionType[] = [
     icon: "MessageCircle",
     title: "Chat Konseling",
     desc: "Konsultasi via chat real-time",
-    price: "Mulai Rp 75.000",
-    duration: "60 menit",
   },
   {
     icon: "Video",
     title: "Video Call",
     desc: "Sesi tatap muka virtual",
-    price: "Mulai Rp 150.000",
-    duration: "50 menit",
   },
   {
     icon: "Phone",
     title: "Konseling Telepon",
     desc: "Konsultasi via panggilan suara",
-    price: "Mulai Rp 100.000",
-    duration: "45 menit",
   },
 ];
 

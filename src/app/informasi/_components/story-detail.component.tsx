@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Heart } from "lucide-react";
 import type { Story } from "./informasi.main";
@@ -35,21 +36,43 @@ export default function StoryDetailModal({
             className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-[30px] bg-white border-8 border-white/70 shadow-2xl"
           >
             <>
-              {/* Header */}
-              <div className="relative h-64 bg-gradient-to-br from-[#D2E6F7] to-[#92D79E]">
+              {/* HEADER WITH IMAGE */}
+              <div className="relative h-64 w-full overflow-hidden rounded-t-[22px]">
+                {/* Image */}
+                <Image
+                  src={story.image}
+                  alt={story.title}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/30" />
+
+                {/* Close button */}
                 <button
                   onClick={() => setSelectedStory(null)}
                   className="absolute top-6 right-6 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors z-10"
                 >
                   <span className="text-2xl text-gray-700">×</span>
                 </button>
-                <div className="absolute bottom-6 left-8 right-8">
-                  <h2 className="text-3xl font-black text-white mb-2" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.2)' }}>
+
+                {/* Title */}
+                <div className="absolute bottom-6 left-8 right-8 z-10">
+                  <h2
+                    className="text-3xl font-black text-white mb-2"
+                    style={{ textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}
+                  >
                     {story.title}
                   </h2>
+
                   <div className="flex flex-wrap gap-2">
                     {story.tags.map((tag, idx) => (
-                      <span key={idx} className="bg-white/90 px-3 py-1 rounded-full text-sm font-semibold text-[#2B6CB0]">
+                      <span
+                        key={idx}
+                        className="bg-white/90 px-3 py-1 rounded-full text-sm font-semibold text-[#2B6CB0]"
+                      >
                         {tag}
                       </span>
                     ))}
@@ -57,14 +80,23 @@ export default function StoryDetailModal({
                 </div>
               </div>
 
-              {/* Content */}
+              {/* CONTENT */}
               <div className="p-8">
                 <div className="flex items-center gap-4 mb-6">
-                  {/* Author image placeholder */}
-                  <div className="w-16 h-16 bg-[#D2E6F7] rounded-full flex-shrink-0" />
+                  <Image
+                    className="w-16 h-16 rounded-full object-cover"
+                    src={story.image}
+                    alt={story.author}
+                    width={64}
+                    height={64}
+                  />
                   <div>
-                    <h3 className="font-bold text-[#2B6CB0] text-lg">{story.author}</h3>
-                    <p className="text-gray-600 text-sm">{story.location} • {story.date}</p>
+                    <h3 className="font-bold text-[#2B6CB0] text-lg">
+                      {story.author}
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      {story.location} • {story.date}
+                    </p>
                   </div>
                 </div>
 
@@ -84,6 +116,7 @@ export default function StoryDetailModal({
                       {story.readTime} baca
                     </span>
                   </div>
+
                   <button className="px-6 py-2 bg-[#6BA5D6] text-white font-semibold rounded-xl hover:bg-[#5A94C5] transition-colors w-full sm:w-auto">
                     Bagikan Kisah
                   </button>

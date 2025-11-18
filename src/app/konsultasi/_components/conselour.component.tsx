@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { motion, Variants } from "framer-motion";
 import { Calendar } from "lucide-react";
@@ -57,8 +58,8 @@ export default function CounselorSection({ counselors }: CounselorProps) {
               onClick={() => setSelectedConselor(counselor.id)}
             >
               {/* Image Placeholder */}
-              <div className="h-48 bg-gradient-to-b from-[#D2E6F7] to-[#6BA5D6] flex items-center justify-center">
-                <div className="w-32 h-32 bg-white/30 rounded-full" />
+              <div className="h-48 bg-gradient-to-b from-[#D2E6F7]  to-[#6BA5D6] flex items-center justify-center">
+                <Image className="w-32 h-32 rounded-full object-contain" src={counselor.image} alt={counselor.name} width={128} height={128} />
               </div>
               
               <div className="p-6">
@@ -84,7 +85,7 @@ export default function CounselorSection({ counselors }: CounselorProps) {
                   </div>
                 </div>
 
-                <button className="w-full py-2.5 bg-[#92D79E] hover:bg-[#7fc48a] text-[#2B6CB0] font-bold rounded-xl transition-colors">
+                <button className="w-full py-2.5 bg-[#6BA5D6] hover:bg-[#5A94C5] text-white font-bold rounded-xl transition-colors">
                   <Calendar className="inline mr-2" size={18} />
                   Jadwalkan Konsultasi
                 </button>

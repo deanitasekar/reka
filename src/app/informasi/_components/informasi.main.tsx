@@ -74,7 +74,7 @@ const inspirationalStories: Story[] = [
     date: "Januari 2023",
     excerpt: "Dari trauma banjir bandang hingga menjadi fasilitator pemulihan psikososial...",
     fullStory: "Banjir setinggi 2 meter menenggelamkan harapan kami. Tapi di pengungsian, saya menemukan kekuatan dari sesama penyintas. Program konseling mengubah trauma menjadi tekad. Sekarang saya membantu 50+ ibu-ibu pulih dari trauma.",
-    image: "/story-2.jpg",
+    image: "/story-2.webp",
     readTime: "7 menit",
     likes: 189,
     tags: ["Banjir", "Perempuan Tangguh", "Psikososial"]
@@ -88,7 +88,7 @@ const inspirationalStories: Story[] = [
     date: "Maret 2023",
     excerpt: "Longsor merenggut keluarga, tapi tidak merenggut harapan untuk menolong sesama...",
     fullStory: "Tanah longsor mengubur masa lalu, tapi tidak mengubur masa depan. Dengan terapi dan dukungan konselor, saya belajar memaafkan dan melanjutkan. Kini aktif di tim SAR lokal, menyelamatkan nyawa adalah terapi terbaik saya.",
-    image: "/story-3.jpg",
+    image: "/story-3.jpeg",
     readTime: "6 menit",
     likes: 156,
     tags: ["Longsor", "SAR", "Pemulihan"]
@@ -102,7 +102,7 @@ const inspirationalStories: Story[] = [
     date: "Desember 2018",
     excerpt: "5 tahun pasca tsunami Selat Sunda, trauma berubah menjadi kekuatan membantu...",
     fullStory: "Tsunami Selat Sunda merenggut banyak hal, tapi tidak harapan. Terapi EMDR dan dukungan psikolog mengubah mimpi buruk menjadi misi. Kini saya fasilitator di 3 desa, membantu 100+ penyintas menemukan kedamaian.",
-    image: "/story-4.jpg",
+    image: "/story-4.JPG",
     readTime: "8 menit",
     likes: 312,
     tags: ["Tsunami", "EMDR", "Fasilitator"]
@@ -116,7 +116,7 @@ const inspirationalStories: Story[] = [
     date: "Januari 2021",
     excerpt: "Gempa Mamuju mengajarkan arti kehilangan dan kekuatan berbagi...",
     fullStory: "Gempa 6.2 SR meruntuhkan fisik, tapi tidak mental. Program trauma healing mengajarkan saya bahwa berbagi cerita adalah obat. Sekarang saya mentor untuk 30+ remaja penyintas, bersama membangun Mamuju lebih baik.",
-    image: "/story-5.jpg",
+    image: "/story-5.avif",
     readTime: "6 menit",
     likes: 198,
     tags: ["Gempa", "Remaja", "Mentoring"]

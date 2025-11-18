@@ -56,11 +56,15 @@ export default function StoriesGridSection({
               className="bg-white rounded-[20px] border-8 border-white/48 overflow-hidden cursor-pointer group"
               onClick={() => setSelectedStory(story.id)}
             >
-              {/* Image placeholder with gradient */}
-              <div className="relative h-48 bg-gradient-to-br from-[#D2E6F7] to-[#92D79E] overflow-hidden">
+              <div className="relative h-48 overflow-hidden rounded-t-[12px] bg-gray-100">
+                <img
+                  src={story.image}
+                  alt={story.title}
+                  className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors" />
                 <div className="absolute bottom-4 left-4 flex gap-2">
-                  {story.tags.map((tag, idx) => (
+                  {story.tags?.map((tag, idx) => (
                     <span key={idx} className="bg-white/90 px-3 py-1 rounded-full text-xs font-semibold text-[#2B6CB0]">
                       {tag}
                     </span>
