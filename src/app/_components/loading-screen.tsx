@@ -71,10 +71,10 @@ export default function LoadingScreen({
         <div className="w-64 sm:w-80 lg:w-96 space-y-3">
           <div className="relative h-3 bg-white/40 rounded-full overflow-hidden shadow-inner backdrop-blur-sm">
             <div
-              className="absolute top-0 left-0 h-full bg-gradient-to-r from-[#5BA8D0] to-[#3D8CB8] rounded-full transition-all duration-300 ease-out shadow-lg"
+              className="absolute top-0 left-0 h-full bg-linear-to-r from-[#5BA8D0] to-[#3D8CB8] rounded-full transition-all duration-300 ease-out shadow-lg"
               style={{ width: `${Math.min(progress, 100)}%` }}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer" />
+              <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/30 to-transparent animate-shimmer" />
             </div>
           </div>
 

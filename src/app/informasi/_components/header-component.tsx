@@ -30,7 +30,8 @@ export default function HeaderSection() {
             textShadow: `0 0 15px rgba(255, 255, 255, 0.7)`,
           }}
         >
-          Temukan inspirasi dari mereka yang telah bangkit. Setiap cerita adalah bukti bahwa badai pasti berlalu.
+          Temukan inspirasi dari mereka yang telah bangkit. Setiap cerita adalah
+          bukti bahwa badai pasti berlalu.
         </motion.p>
       </div>
     </section>

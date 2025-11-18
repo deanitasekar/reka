@@ -11,6 +11,9 @@ const quicksand = Quicksand({
 export const metadata: Metadata = {
   title: "REKA",
   description: "Rehabilitasi dan Kasih",
+  icons: {
+    icon: '/icon_reka.svg', // Pastikan file icon.png ada di folder public
+  },
 };
 
 export default function RootLayout({

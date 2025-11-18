@@ -8,40 +8,40 @@ const resilenceGuides = [
     icon: <BookOpen size={24} />,
     title: "Panduan Pemulihan Diri",
     desc: "Langkah-langkah praktis mengatasi trauma pasca bencana",
-    link: "#"
+    link: "#",
   },
   {
     icon: <Users size={24} />,
     title: "Membangun Support System",
     desc: "Cara membangun jaringan dukungan yang kuat",
-    link: "#"
+    link: "#",
   },
   {
     icon: <Heart size={24} />,
     title: "Teknik Self-Care",
     desc: "Metode perawatan diri untuk kesehatan mental",
-    link: "#"
+    link: "#",
   },
   {
     icon: <Award size={24} />,
     title: "Kisah Sukses Pemulihan",
     desc: "Kompilasi cerita inspiratif para penyintas",
-    link: "#"
-  }
+    link: "#",
+  },
 ];
 
 const sectionVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: "easeOut" }
-  }
+    transition: { duration: 0.7, ease: "easeOut" },
+  },
 };
 
 export default function ResourceGuidesSection() {
   return (
-    <motion.section 
+    <motion.section
       className="w-full py-16 px-4 md:px-12"
       variants={sectionVariants}
       initial="hidden"
@@ -75,9 +75,7 @@ export default function ResourceGuidesSection() {
               <h3 className="text-[#2B6CB0] text-lg font-black mb-2">
                 {guide.title}
               </h3>
-              <p className="text-gray-600 text-sm mb-4">
-                {guide.desc}
-              </p>
+              <p className="text-gray-600 text-sm mb-4">{guide.desc}</p>
               <button className="text-[#6BA5D6] font-semibold flex items-center justify-center gap-1 mx-auto hover:gap-2 transition-all">
                 Download
                 <ArrowRight size={16} />

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React from "react";
 import Link from "next/link";
@@ -36,7 +36,6 @@ const Navbar = () => {
           backdrop-blur-md
         "
       >
-        {/* LOGO – Nempel kiri */}
         <Link href="/" className="flex items-center -ml-1 lg:-ml-6">
           <Image
             src="/logo_reka.svg"
@@ -55,7 +54,11 @@ const Navbar = () => {
                 href={item.href}
                 className={`
                   transition-colors text-xl px-4
-                  ${active === item.id ? "font-bold text-black" : "font-medium text-black/60 "}
+                  ${
+                    active === item.id
+                      ? "font-bold text-black"
+                      : "font-medium text-black/60 "
+                  }
                 `}
               >
                 {item.label}
@@ -64,9 +67,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* PROFILE + HAMBURGER – Nempel kanan */}
         <div className="flex items-center gap-4">
-
           {/* Profile Image */}
           <Image
             src="/kenali-1.svg"
@@ -76,20 +77,32 @@ const Navbar = () => {
             className="rounded-full object-cover"
           />
 
-          {/* Mobile Hamburger Menu */}
+          {/* Hamburger Menu */}
           <button
             type="button"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="lg:hidden flex flex-col gap-1.5 w-6 h-6 justify-center"
             aria-label="Toggle menu"
           >
-            <span className={`block h-0.5 w-full bg-black transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-            <span className={`block h-0.5 w-full bg-black transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`} />
-            <span className={`block h-0.5 w-full bg-black transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+            <span
+              className={`block h-0.5 w-full bg-black transition-all duration-300 ${
+                isMenuOpen ? "rotate-45 translate-y-2" : ""
+              }`}
+            />
+            <span
+              className={`block h-0.5 w-full bg-black transition-all duration-300 ${
+                isMenuOpen ? "opacity-0" : ""
+              }`}
+            />
+            <span
+              className={`block h-0.5 w-full bg-black transition-all duration-300 ${
+                isMenuOpen ? "-rotate-45 -translate-y-2" : ""
+              }`}
+            />
           </button>
         </div>
 
-        {/* Mobile Dropdown Menu */}
+        {/* Dropdown Menu */}
         {isMenuOpen && (
           <div className="lg:hidden absolute top-full left-0 right-0 mt-4 mx-4 rounded-[23px] border-4 border-[#FFFFFF] bg-white/95 backdrop-blur-md shadow-[0_18px_40px_rgba(0,0,0,0.08)]">
             <ul className="py-2">

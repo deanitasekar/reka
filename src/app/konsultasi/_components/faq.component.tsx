@@ -4,31 +4,31 @@ import { motion, Variants } from "framer-motion";
 
 const sectionVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: "easeOut" }
-  }
+    transition: { duration: 0.7, ease: "easeOut" },
+  },
 };
 
 const faqs = [
   {
     q: "Apakah konsultasi ini rahasia?",
-    a: "Ya, semua sesi konsultasi dijamin kerahasiaannya sesuai kode etik profesional."
+    a: "Ya, semua sesi konsultasi dijamin kerahasiaannya sesuai kode etik profesional.",
   },
   {
     q: "Bagaimana cara memulai konsultasi?",
-    a: "Pilih jenis konsultasi, konselor, dan jadwal yang sesuai. Lakukan pembayaran dan Anda akan menerima link untuk sesi."
+    a: "Pilih jenis konsultasi, konselor, dan jadwal yang sesuai. Lakukan pembayaran dan Anda akan menerima link untuk sesi.",
   },
   {
     q: "Apakah ada subsidi untuk korban bencana?",
-    a: "Ya, kami menyediakan program subsidi khusus untuk korban bencana. Hubungi tim kami untuk informasi lebih lanjut."
-  }
+    a: "Ya, kami menyediakan program subsidi khusus untuk korban bencana. Hubungi tim kami untuk informasi lebih lanjut.",
+  },
 ];
 
 export default function FaqSection() {
   return (
-    <motion.section 
+    <motion.section
       className="w-full py-16 px-4 md:px-12"
       variants={sectionVariants}
       initial="hidden"
@@ -46,7 +46,6 @@ export default function FaqSection() {
           {faqs.map((faq, idx) => (
             <motion.div
               key={idx}
-              // Animasi individual card
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}

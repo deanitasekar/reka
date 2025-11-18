@@ -16,10 +16,7 @@ export default function Footer() {
         aria-hidden="true"
       />
 
-      <div
-        className="absolute z-10"
-        style={{ top: "30px", left: "30px" }}
-      >
+      <div className="absolute z-10" style={{ top: "30px", left: "30px" }}>
         <Image
           src="/kucing.svg"
           alt="Ilustrasi Kucing"
@@ -28,7 +25,6 @@ export default function Footer() {
         />
       </div>
 
-      {/* Responsive positioning */}
       <style jsx>{`
         @media (min-width: 640px) {
           footer > div:first-child {
@@ -66,23 +62,24 @@ export default function Footer() {
       {/* Content */}
       <div className="relative px-10 lg:px-12 w-full min-h-[400px] flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-24 lg:gap-8 w-full">
-          {/* Left */}
           <div className="lg:col-span-2 -mr-4 xl:mt-8 2xl:mt-10">
-            <div className="flex items-start gap-3 mb-4">
-              {/* Logo Icon */}
-              <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shrink-0">
-                <div className="w-3 h-3 bg-black rounded-full" />
-              </div>
-              <h3 className="text-2xl font-bold text-white">Air Berotot</h3>
+            <div className="mb-6">
+              <Image
+                src="/logo_rekaa.svg"
+                alt="Logo Rekaa"
+                width={160}
+                height={50}
+                className="object-contain"
+              />
             </div>
 
-            <p className="text-sm font-semibold text-white mb-6 max-w-xs leading-relaxed">
-              Lorem Ipsum Dolor Sit Amet Consectetur. Eu Arcu Malesuada Sit
-              Etiam Amet Vitae Nunc Eget. Urna Quis Sed Morbi Urna Eleifend
-              Sollicitudin Porttitor Vivamus.
+            <p className="text-sm font-medium text-white mb-6 max-w-sm leading-relaxed">
+              Rehabilitasi dan Kasih adalah platform digital yang
+              berfokus pada pemulihan kesehatan mental dan dukungan psikososial
+              bagi penyintas bencana di Indonesia, menyediakan akses ke layanan
+              profesional dan komunitas yang mendukung.
             </p>
 
-            {/* Social Icons */}
             <div className="flex items-center gap-4">
               <Link
                 href="#"
@@ -126,10 +123,9 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Right */}
+          {/* Right Section */}
           <div className="hidden lg:block">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 xl:mt-8 2xl:mt-10">
-              {/* Site Map*/}
               <div>
                 <h4 className="text-base font-bold text-white mb-4">
                   Site Map
@@ -140,45 +136,28 @@ export default function Footer() {
                       href="/"
                       className="text-sm text-gray-300 hover:text-white transition-colors"
                     >
-                      Homepage
+                      Beranda
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href="/resources"
+                      href="/konsultasi"
                       className="text-sm text-gray-300 hover:text-white transition-colors"
                     >
-                      Resources & News
+                      Konsultasi
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href="/contact"
+                      href="/informasi"
                       className="text-sm text-gray-300 hover:text-white transition-colors"
                     >
-                      Contact
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/portal"
-                      className="text-sm text-gray-300 hover:text-white transition-colors"
-                    >
-                      Portal
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="#"
-                      className="text-sm text-gray-300 hover:text-white transition-colors"
-                    >
-                      Lorem Ipsum
+                      Informasi
                     </Link>
                   </li>
                 </ul>
               </div>
 
-              {/* Legal*/}
               <div>
                 <h4 className="text-base font-bold text-white mb-4">Legal</h4>
                 <ul className="space-y-3">
@@ -187,7 +166,7 @@ export default function Footer() {
                       href="/privacy"
                       className="text-sm text-gray-300 hover:text-white transition-colors"
                     >
-                      Privacy & Policy
+                      Privacy Policy
                     </Link>
                   </li>
                   <li>
@@ -195,15 +174,7 @@ export default function Footer() {
                       href="/terms"
                       className="text-sm text-gray-300 hover:text-white transition-colors"
                     >
-                      Terms of Services
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/terms"
-                      className="text-sm text-gray-300 hover:text-white transition-colors"
-                    >
-                      Terms of Services
+                      Terms of Service
                     </Link>
                   </li>
                 </ul>

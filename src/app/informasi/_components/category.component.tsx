@@ -11,20 +11,20 @@ type CategoryFilterProps = {
 
 const sectionVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: "easeOut" }
-  }
+    transition: { duration: 0.7, ease: "easeOut" },
+  },
 };
 
 export default function CategoryFilterSection({
   categories,
   currentCategory,
-  setCurrentCategory
+  setCurrentCategory,
 }: CategoryFilterProps) {
   return (
-    <motion.section 
+    <motion.section
       className="w-full py-8 px-4 md:px-12"
       variants={sectionVariants}
       initial="hidden"

@@ -84,9 +84,9 @@ export default function MotionTreesBackground() {
             }}
           >
             <div
-              className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 
-                         w-[100px] sm:w-[120px] md:w-[140px] h-[15px] sm:h-[20px] 
-                         bg-black/10 rounded-full blur-xl"
+              className="absolute -bottom-2 left-1/2 transform -translate-x-1/2
+                        w-[100px] sm:w-[120px] md:w-[140px] h-[15px] sm:h-[20px]
+                        bg-black/10 rounded-full blur-xl"
             />
           </motion.div>
         </div>

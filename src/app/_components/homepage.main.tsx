@@ -47,37 +47,37 @@ export default function Home() {
           aria-hidden="true"
         />
 
-        {/* Motion Trees Background - absolute positioning */}
+        {/* Motion Trees Background */}
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
           <MotionTreesBackground />
         </div>
 
-        {/* Main content wrapper */}
+        {/* Main content */}
         <main className="relative z-10 w-full" style={{ minHeight: "415vh" }}>
           <Navbar />
 
-          {/* Hero Section - 980px = 90.7vh */}
+          {/* Hero Section */}
           <div style={{ minHeight: "90.7vh" }}>
             <HeroSection />
           </div>
 
-          {/* Kenali Diri Section - 966px = 89.4vh */}
+          {/* Kenali Diri Section */}
           <div style={{ minHeight: "89.4vh" }}>
             <KenaliDiriSection />
           </div>
 
-          {/* Bantuan Section - 915px = 84.7vh */}
+          {/* Bantuan Section */}
           <div style={{ minHeight: "84.7vh" }}>
             <BantuanSection />
           </div>
 
-          {/* Pusat Panduan & Resiliensi Section - 1633px = 151.2vh */}
+          {/* Pusat Panduan & Resiliensi Section */}
           <div style={{ minHeight: "151.2vh" }}>
             <PanduanResiliensiSection />
           </div>
         </main>
 
-        {/* Footer - always at bottom */}
+        {/* Footer */}
         <footer className="relative z-20 w-full">
           <Footer />
         </footer>

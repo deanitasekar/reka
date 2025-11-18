@@ -52,14 +52,14 @@ export default function VideoSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ delay: idx * 0.1, duration: 0.5 }}
-              className="relative bg-gradient-to-br from-[#D2E6F7] to-[#6BA5D6] rounded-[20px] border-8 border-white/48 overflow-hidden group cursor-pointer h-64"
+              className="relative bg-linear-to-br from-[#D2E6F7] to-[#6BA5D6] rounded-[20px] border-8 border-white/48 overflow-hidden group cursor-pointer h-64"
             >
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                   <Play className="text-[#6BA5D6] ml-1" size={32} />
                 </div>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+              <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/70 to-transparent p-6">
                 <h3 className="text-white font-bold text-lg mb-1">{video.title}</h3>
                 <div className="flex gap-4 text-white/80 text-sm">
                   <span>{video.duration}</span>

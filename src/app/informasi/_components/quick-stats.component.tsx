@@ -6,24 +6,24 @@ const stats = [
   { number: "2,500+", label: "Penyintas Pulih" },
   { number: "150+", label: "Kisah Inspiratif" },
   { number: "50+", label: "Komunitas Aktif" },
-  { number: "95%", label: "Tingkat Pemulihan" }
+  { number: "95%", label: "Tingkat Pemulihan" },
 ];
 
 const sectionVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
-    transition: { 
-      duration: 0.7, 
-      ease: "easeOut"
-    }
-  }
+    transition: {
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  },
 };
 
 export default function QuickStatsSection() {
   return (
-    <motion.section 
+    <motion.section
       className="w-full py-8 px-4 md:px-12"
       variants={sectionVariants}
       initial="hidden"
@@ -41,7 +41,9 @@ export default function QuickStatsSection() {
               transition={{ delay: idx * 0.1, duration: 0.5 }}
               className="bg-white/70 backdrop-blur-sm rounded-[20px] border-4 border-white/48 p-4 text-center"
             >
-              <h3 className="text-3xl font-black text-[#2B6CB0]">{stat.number}</h3>
+              <h3 className="text-3xl font-black text-[#2B6CB0]">
+                {stat.number}
+              </h3>
               <p className="text-sm text-gray-600 font-medium">{stat.label}</p>
             </motion.div>
           ))}

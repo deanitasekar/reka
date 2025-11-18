@@ -1,7 +1,13 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { ArrowRight, Calendar, Heart, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  ArrowRight,
+  Calendar,
+  Heart,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import type { Story } from "./informasi.main";
 
 type StoriesGridProps = {
@@ -13,21 +19,21 @@ type StoriesGridProps = {
 
 const sectionVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: "easeOut" }
-  }
+    transition: { duration: 0.7, ease: "easeOut" },
+  },
 };
 
 export default function StoriesGridSection({
   stories,
   setSelectedStory,
   currentPage,
-  setCurrentPage
+  setCurrentPage,
 }: StoriesGridProps) {
   return (
-    <motion.section 
+    <motion.section
       className="w-full py-8 px-4 md:px-12"
       variants={sectionVariants}
       initial="hidden"
@@ -65,7 +71,10 @@ export default function StoriesGridSection({
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors" />
                 <div className="absolute bottom-4 left-4 flex gap-2">
                   {story.tags?.map((tag, idx) => (
-                    <span key={idx} className="bg-white/90 px-3 py-1 rounded-full text-xs font-semibold text-[#2B6CB0]">
+                    <span
+                      key={idx}
+                      className="bg-white/90 px-3 py-1 rounded-full text-xs font-semibold text-[#2B6CB0]"
+                    >
                       {tag}
                     </span>
                   ))}
@@ -84,7 +93,7 @@ export default function StoriesGridSection({
                 <p className="text-gray-700 text-sm line-clamp-3 mb-4">
                   {story.excerpt}
                 </p>
-                
+
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4 text-sm text-gray-500">
                     <span className="flex items-center gap-1">

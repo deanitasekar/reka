@@ -21,18 +21,18 @@ type CounselorProps = {
 
 const sectionVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: "easeOut" }
-  }
+    transition: { duration: 0.7, ease: "easeOut" },
+  },
 };
 
 export default function CounselorSection({ counselors }: CounselorProps) {
   const [selectedConselor, setSelectedConselor] = useState<number | null>(null);
 
   return (
-    <motion.section 
+    <motion.section
       className="w-full py-16 px-4 md:px-12"
       variants={sectionVariants}
       initial="hidden"
@@ -59,9 +59,15 @@ export default function CounselorSection({ counselors }: CounselorProps) {
             >
               {/* Image Placeholder */}
               <div className="h-48 bg-gradient-to-b from-[#D2E6F7]  to-[#6BA5D6] flex items-center justify-center">
-                <Image className="w-32 h-32 rounded-full object-contain" src={counselor.image} alt={counselor.name} width={128} height={128} />
+                <Image
+                  className="w-32 h-32 rounded-full object-contain"
+                  src={counselor.image}
+                  alt={counselor.name}
+                  width={128}
+                  height={128}
+                />
               </div>
-              
+
               <div className="p-6">
                 <h3 className="text-[#2B6CB0] text-xl font-black mb-2">
                   {counselor.name}
@@ -69,11 +75,13 @@ export default function CounselorSection({ counselors }: CounselorProps) {
                 <p className="text-[#6BA5D6] font-semibold mb-3">
                   {counselor.specialization}
                 </p>
-                
+
                 <div className="space-y-2 mb-4">
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-600">Pengalaman:</span>
-                    <span className="font-semibold">{counselor.experience}</span>
+                    <span className="font-semibold">
+                      {counselor.experience}
+                    </span>
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-600">Rating:</span>
@@ -81,7 +89,9 @@ export default function CounselorSection({ counselors }: CounselorProps) {
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-600">Jadwal:</span>
-                    <span className="font-semibold">{counselor.availability}</span>
+                    <span className="font-semibold">
+                      {counselor.availability}
+                    </span>
                   </div>
                 </div>
 

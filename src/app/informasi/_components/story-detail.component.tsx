@@ -14,9 +14,9 @@ type ModalProps = {
 export default function StoryDetailModal({
   selectedStoryId,
   setSelectedStory,
-  stories
+  stories,
 }: ModalProps) {
-  const story = stories.find(s => s.id === selectedStoryId);
+  const story = stories.find((s) => s.id === selectedStoryId);
 
   return (
     <AnimatePresence>
@@ -36,7 +36,6 @@ export default function StoryDetailModal({
             className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-[30px] bg-white border-8 border-white/70 shadow-2xl"
           >
             <>
-              {/* HEADER WITH IMAGE */}
               <div className="relative h-64 w-full overflow-hidden rounded-t-[22px]">
                 {/* Image */}
                 <Image
@@ -80,7 +79,7 @@ export default function StoryDetailModal({
                 </div>
               </div>
 
-              {/* CONTENT */}
+              {/* Main Content */}
               <div className="p-8">
                 <div className="flex items-center gap-4 mb-6">
                   <Image
