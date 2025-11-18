@@ -58,13 +58,25 @@ export default function PanduanResiliensiSection() {
         <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-start py-80">
 
           <div className="lg:col-span-7 flex flex-col items-center lg:items-stretch z-10">
-            <div className="text-center mb-8 text-white drop-shadow-md">
+            <motion.div 
+              className="text-center mb-8 text-white drop-shadow-md"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
               <h2 className="text-3xl md:text-4xl font-bold">
                 Pusat <br /> Panduan & Resiliensi
               </h2>
-            </div>
+            </motion.div>
 
-            <div className="bg-white rounded-[30px] p-6 md:p-8 w-full h-auto shadow-xl">
+            <motion.div 
+              className="bg-white rounded-[30px] p-6 md:p-8 w-full h-auto shadow-xl"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            >
               {/* Accordion PFA */}
               <div className="mb-4">
                 <button
@@ -189,14 +201,17 @@ export default function PanduanResiliensiSection() {
                   )}
                 </AnimatePresence>
               </div>
-            </div>
+            </motion.div>
           </div>
 
-          {/* === KOLOM KANAN (Area Rumah & Tas P3K) === */}
           <div className="hidden lg:block lg:col-span-5 relative h-full min-h-[500px]">
             <motion.div
               className="absolute -bottom-50 -right-20 flex items-center cursor-pointer z-20 group"
               onClick={() => setShowP3K(true)}
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

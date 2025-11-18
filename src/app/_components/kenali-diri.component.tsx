@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link"; // Pastikan Link diimport
+import Link from "next/link";
+import { motion } from "framer-motion";
 import TiltedCard from "@/components/ui/tilted-card.jsx";
 import { X } from "lucide-react";
 
@@ -75,24 +76,41 @@ export default function KenaliDiriSection() {
 
   return (
     <>
-      <section className="w-full py-16 sm:py-8 md:py-8 px-4 overflow-hidden relative min-h-screen flex flex-col items-center justify-start">
-        {/* Header */}
-        <div className="text-center mb-12 sm:mb-16 space-y-2">
+      <section 
+        id="kenali-diri-section"
+        className="w-full py-16 sm:py-8 md:py-8 px-4 overflow-hidden relative min-h-screen flex flex-col items-center justify-start"
+      >
+        {/* Header with scroll animation */}
+        <motion.div 
+          className="text-center mb-12 sm:mb-16 space-y-2"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <h3 className="text-[#4A90C8] text-lg sm:text-xl md:text-2xl font-semibold tracking-wide">
             Kenali Dirimu
           </h3>
           <h2 className="text-[#3B7CA8] text-3xl sm:text-4xl md:text-5xl font-black leading-tight">
             Dimanakah Posisi Emosimu?
           </h2>
-        </div>
+        </motion.div>
 
-        {/* Cards */}
+        {/* Cards with staggered animation */}
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start justify-center gap-10 md:gap-12 lg:gap-20">
           {items.map((item, index) => (
-            <div
+            <motion.div
               key={index}
               onClick={() => setSelectedItem(item)}
               className="flex flex-col items-center group cursor-pointer transition-transform hover:scale-105"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ 
+                duration: 0.6, 
+                delay: index * 0.2,
+                ease: "easeOut" 
+              }}
             >
               <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64">
                 <TiltedCard
@@ -115,7 +133,7 @@ export default function KenaliDiriSection() {
               <p className="mt-6 text-center font-medium text-[#333333] text-base sm:text-lg leading-snug whitespace-pre-line transition-colors duration-300 group-hover:font-bold group-hover:text-black">
                 {item.label}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>

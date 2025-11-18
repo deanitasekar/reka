@@ -52,6 +52,16 @@ export default function HeroSection() {
     `;
   };
 
+  const handleScrollToKenaliDiri = () => {
+    const kenaliDiriSection = document.getElementById('kenali-diri-section');
+    if (kenaliDiriSection) {
+      kenaliDiriSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <section className="relative w-full min-h-screen flex flex-col items-center justify-start overflow-hidden pt-24 sm:pt-28 md:pt-32 pb-10 sm:pb-5 md:pb-5">
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
@@ -182,7 +192,10 @@ export default function HeroSection() {
           kecil menuju pulih
         </p>
 
-        <button className="bg-[#6BA5D6] hover:bg-[#5A94C5] text-white font-bold text-sm sm:text-base px-8 sm:px-10 py-3 sm:py-4 rounded-xl transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 mb-6">
+        <button 
+          onClick={handleScrollToKenaliDiri}
+          className="bg-[#6BA5D6] hover:bg-[#5A94C5] text-white font-bold text-sm sm:text-base px-8 sm:px-10 py-3 sm:py-4 rounded-xl transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 mb-6"
+        >
           Lihat Lebih Lanjut
         </button>
 

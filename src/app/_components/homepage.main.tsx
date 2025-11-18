@@ -29,7 +29,7 @@ export default function Home() {
       )}
 
       {/* Main Content */}
-      <div className="relative flex flex-col font-sans overflow-x-hidden min-h-screen">
+      <div className="relative flex flex-col font-sans overflow-x-hidden min-h-screen" style={{ scrollBehavior: 'smooth' }}>
         <div
           className="fixed inset-0 -z-20"
           style={{

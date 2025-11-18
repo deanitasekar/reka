@@ -11,7 +11,10 @@ export default function BantuanSection() {
 
         <motion.div
           className="absolute left-8 md:left-12 lg:left-16 top-[15%] lg:top-1/4 w-40 sm:w-48 lg:w-56 xl:w-64 h-auto z-10 hidden lg:block"
-          initial="rest"
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           whileHover="hover"
         >
           <motion.img
@@ -34,13 +37,25 @@ export default function BantuanSection() {
           />
         </motion.div>
 
-        <div className="lg:hidden text-center mb-8 sm:mb-12">
+        <motion.div 
+          className="lg:hidden text-center mb-8 sm:mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <h2 className="text-3xl sm:text-4xl font-black text-white" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.2)' }}>
             Bantuan Profesional
           </h2>
-        </div>
+        </motion.div>
 
-        <div className="flex justify-center">
+        <motion.div 
+          className="flex justify-center"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+        >
             <div
             className="bg-white rounded-[20px] border-8 p-6 sm:p-8 h-auto w-full max-w-[340px] flex flex-col items-center justify-center gap-4"
             style={{
@@ -66,9 +81,15 @@ export default function BantuanSection() {
               Hubungi Kami
             </button>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="flex justify-center">
+        <motion.div 
+          className="flex justify-center"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+        >
           <div
             className="bg-white rounded-[20px] border-8 p-6 sm:p-8 h-auto w-full max-w-[340px] flex flex-col items-center justify-center gap-4"
             style={{
@@ -94,7 +115,7 @@ export default function BantuanSection() {
               Jadwalkan Sesi
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
