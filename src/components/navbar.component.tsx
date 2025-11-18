@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
@@ -26,7 +27,7 @@ const Navbar = () => {
     <div className="fixed inset-x-0 top-8 flex justify-center px-4 max-h-20 z-50">
       <nav
         className="
-          flex w-full lg:w-7/12 lg:max-w-7/12 items-center justify-between lg:justify-center lg:gap-x-16
+          flex w-full lg:w-7/12 lg:max-w-7/12 items-center justify-between 
           rounded-[23px]
           border-4 border-[#FFFFFF]
           bg-white/55
@@ -35,26 +36,26 @@ const Navbar = () => {
           backdrop-blur-md
         "
       >
-        {/* Logo */}
-        <Link href="/">
-          <div className="h-[34px] w-[100px] rounded-full bg-[#FFD5D5] cursor-pointer hover:opacity-80 transition-opacity" />
+        {/* LOGO – Nempel kiri */}
+        <Link href="/" className="flex items-center -ml-1 lg:-ml-6">
+          <Image
+            src="/logo_reka.svg"
+            alt="Logo Reka"
+            width={120}
+            height={80}
+            className="cursor-pointer transition-opacity"
+          />
         </Link>
 
         {/* Desktop Navigation */}
-        <ul className="hidden lg:flex items-center justify-center gap-x-16 text-base">
+        <ul className="hidden lg:flex items-center justify-center gap-x-16 text-base flex-1">
           {items.map((item) => (
             <li key={item.id}>
               <Link
                 href={item.href}
                 className={`
-                  transition-colors
-                  text-xl
-                  px-4
-                  ${
-                    active === item.id
-                      ? "font-bold text-black"
-                      : "font-medium text-black/60 hover:text-black"
-                  }
+                  transition-colors text-xl px-4
+                  ${active === item.id ? "font-bold text-black" : "font-medium text-black/60 "}
                 `}
               >
                 {item.label}
@@ -63,10 +64,18 @@ const Navbar = () => {
           ))}
         </ul>
 
+        {/* PROFILE + HAMBURGER – Nempel kanan */}
         <div className="flex items-center gap-4">
-          {/* Profile placeholder */}
-          <div className="h-[34px] w-[34px] rounded-full bg-[#6CB4EE]" />
-          
+
+          {/* Profile Image */}
+          <Image
+            src="/kenali-1.svg"
+            alt="Profile"
+            width={50}
+            height={50}
+            className="rounded-full object-cover"
+          />
+
           {/* Mobile Hamburger Menu */}
           <button
             type="button"
